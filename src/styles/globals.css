@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%; /* Soft White with blue undertone */
+    --foreground: 222 84% 4.9%; /* Rich Dark Blue-Gray */
+
+    --card: 0 0% 100%; /* Pure White */
+    --card-foreground: 222 84% 4.9%; /* Rich Dark Blue-Gray */
+
+    --popover: 0 0% 100%; /* Pure White */
+    --popover-foreground: 222 84% 4.9%; /* Rich Dark Blue-Gray */
+
+    --primary: 221 83% 53%; /* Vibrant Blue */
+    --primary-foreground: 210 40% 98%; /* Almost White */
+
+    --secondary: 217 32% 17%; /* Deep Navy */
+    --secondary-foreground: 210 40% 98%; /* Almost White */
+
+    --muted: 210 40% 96%; /* Very Light Gray-Blue */
+    --muted-foreground: 215 16% 47%; /* Medium Gray */
+
+    --accent: 142 76% 36%; /* Emerald Green */
+    --accent-foreground: 355 7% 97%; /* Off-White */
+
+    --destructive: 0 84% 60%; /* Bright Red */
+    --destructive-foreground: 0 0% 98%; /* White */
+
+    --border: 214 32% 91%; /* Light Gray-Blue */
+    --input: 214 32% 91%; /* Light Gray-Blue */
+    --ring: 221 83% 53%; /* Vibrant Blue */
+
+    --radius: 0.75rem;
+
+    /* Chart colors */
+    --chart-1: 221 83% 53%; /* Primary Blue */
+    --chart-2: 142 76% 36%; /* Emerald Green */
+    --chart-3: 262 83% 58%; /* Purple */
+    --chart-4: 346 87% 43%; /* Rose */
+    --chart-5: 35 91% 62%; /* Orange */
+
+    /* Sidebar colors */
+    --sidebar-background: 210 20% 98%;
+    --sidebar-foreground: 222 84% 4.9%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 84% 4.9%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 221 83% 53%;
+  }
+
+  .dark {
+    --background: 0 0% 0%; /* Pure Black #000000 */
+    --foreground: 0 0% 98%; /* Pure White */
+
+    --card: 0 0% 4%; /* Very Dark Gray */
+    --card-foreground: 0 0% 98%; /* Pure White */
+
+    --popover: 0 0% 6%; /* Dark Gray */
+    --popover-foreground: 0 0% 98%; /* Pure White */
+
+    --primary: 217 91% 65%; /* Bright Blue */
+    --primary-foreground: 0 0% 0%; /* Pure Black */
+
+    --secondary: 0 0% 10%; /* Very Dark Gray */
+    --secondary-foreground: 0 0% 98%; /* Pure White */
+
+    --muted: 0 0% 8%; /* Dark Gray */
+    --muted-foreground: 0 0% 70%; /* Light Gray */
+
+    --accent: 142 76% 45%; /* Brighter Emerald Green */
+    --accent-foreground: 0 0% 0%; /* Pure Black */
+
+    --destructive: 0 84% 65%; /* Bright Red */
+    --destructive-foreground: 0 0% 98%; /* Pure White */
+
+    --border: 0 0% 15%; /* Dark Gray Border */
+    --input: 0 0% 12%; /* Dark Gray Input */
+    --ring: 217 91% 65%; /* Bright Blue */
+
+    /* Chart colors for dark mode */
+    --chart-1: 217 91% 65%; /* Bright Blue */
+    --chart-2: 142 76% 45%; /* Brighter Emerald Green */
+    --chart-3: 262 83% 65%; /* Brighter Purple */
+    --chart-4: 346 87% 50%; /* Brighter Rose */
+    --chart-5: 35 91% 70%; /* Brighter Orange */
+
+    /* Sidebar colors for dark mode */
+    --sidebar-background: 0 0% 0%; /* Pure Black */
+    --sidebar-foreground: 0 0% 98%; /* Pure White */
+    --sidebar-primary: 217 91% 65%; /* Bright Blue */
+    --sidebar-primary-foreground: 0 0% 0%; /* Pure Black */
+    --sidebar-accent: 0 0% 8%; /* Dark Gray */
+    --sidebar-accent-foreground: 0 0% 98%; /* Pure White */
+    --sidebar-border: 0 0% 15%; /* Dark Gray Border */
+    --sidebar-ring: 217 91% 65%; /* Bright Blue */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Enhanced scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.8);
+  }
+
+  /* Improved focus states */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Smooth transitions for theme switching */
+  * {
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* Glass effect utility */
+  .glass {
+    backdrop-filter: blur(16px) saturate(180%);
+    background-color: hsl(var(--background) / 0.8);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  /* Neumorphic shadow utilities */
+  .shadow-neumorphic {
+    box-shadow: 12px 12px 24px hsl(var(--primary) / 0.1), -12px -12px 24px hsl(var(--background));
+  }
+
+  .shadow-neumorphic-inset {
+    box-shadow: inset 8px 8px 16px hsl(var(--primary) / 0.1), inset -8px -8px 16px hsl(var(--background));
+  }
+
+  .dark .shadow-neumorphic {
+    box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.8), -12px -12px 24px rgba(255, 255, 255, 0.02);
+  }
+
+  .dark .shadow-neumorphic-inset {
+    box-shadow: inset 8px 8px 16px rgba(0, 0, 0, 0.8), inset -8px -8px 16px rgba(255, 255, 255, 0.02);
+  }
+
+  /* Gradient text utility */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Improved button hover effects */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, hsl(var(--primary-foreground) / 0.3) 0%, transparent 70%);
+    transition: all 0.6s ease;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+
+  .btn-primary:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Loading shimmer effect */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--muted-foreground) / 0.1) 20%,
+      hsl(var(--muted-foreground) / 0.1) 60%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}
