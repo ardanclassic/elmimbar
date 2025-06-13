@@ -1,4 +1,4 @@
-# El Mimbar Digital
+# El Mimbar
 
 ## 🕌 Your Digital Gateway for Masjid Information
 

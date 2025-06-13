@@ -108,21 +108,10 @@ const MasjidLandingPage: React.FC = () => {
       >
         <div className="absolute inset-0 z-0">
           <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-            <source src="/path/to/local-video.mp4" type="video/mp4" />
+            <source src={`/videos/mosque-footage.mp4`} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-teal-800 to-blue-900 opacity-50 dark:opacity-60"></div>
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px]"></div>
-          <motion.div
-            className="absolute inset-0 opacity-30"
-            initial={{ scale: 1, opacity: 0.3 }}
-            whileInView={{ scale: 1.05, opacity: 0.5 }}
-            transition={{ duration: 10, ease: "easeInOut" }}
-            viewport={{ amount: 0.3 }}
-          >
-            <div className="absolute top-20 left-20 w-32 h-32 border border-white/20 rounded-full"></div>
-            <div className="absolute top-40 right-32 w-24 h-24 border border-white/30 rounded-full"></div>
-            <div className="absolute bottom-32 left-1/3 w-16 h-16 border border-white/40 rounded-full"></div>
-          </motion.div>
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]"></div>
         </div>
 
         <motion.div
@@ -185,19 +174,6 @@ const MasjidLandingPage: React.FC = () => {
               </motion.div>
             </motion.div>
           </div>
-
-          <motion.div
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white dark:text-gray-200"
-            initial={{ y: 0 }}
-            whileInView={{ y: 10 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            viewport={{ amount: 0.3 }}
-          >
-            <div className="w-6 h-10 border-2 border-blue-500 dark:border-blue-400 rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-blue-300 dark:bg-blue-500 rounded-full mt-2 animate-pulse"></div>
-            </div>
-            <p className="text-sm mt-2">Scroll Down</p>
-          </motion.div>
         </motion.div>
       </motion.section>
 

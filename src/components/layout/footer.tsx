@@ -19,17 +19,17 @@ const AppFooter = () => {
           diharapkan termasuk golongan orang-orang yang mendapat petunjuk." <br /> (Q.S. At-Taubah: 18)
         </p>
         <div className="w-24 h-1 bg-blue-500 dark:bg-blue-400 mx-auto rounded-full mb-6"></div>
-        <div className="flex justify-center gap-4 mb-6">
+        <div className="block md:flex justify-center gap-4 mb-6">
           <a
             href={`tel:${masjidProfile.phone}`}
-            className="flex items-center gap-2 text-blue-400 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-500"
+            className="flex items-center justify-center gap-2 text-blue-400 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-500"
           >
             <Phone className="h-5 w-5" />
             {masjidProfile.phone}
           </a>
           <a
             href={`mailto:${masjidProfile.email}`}
-            className="flex items-center gap-2 text-blue-400 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-500"
+            className="flex items-center justify-center gap-2 text-blue-400 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-500"
           >
             <Mail className="h-5 w-5" />
             {masjidProfile.email}
@@ -38,7 +38,7 @@ const AppFooter = () => {
             href={`https://maps.google.com/maps?q=${encodeURIComponent(masjidProfile.location)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-blue-400 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-500"
+            className="flex items-center justify-center gap-2 text-blue-400 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-500"
           >
             <MapPin className="h-5 w-5" />
             {masjidProfile.location}
