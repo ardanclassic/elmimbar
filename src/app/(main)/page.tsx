@@ -143,36 +143,8 @@ const MasjidLandingPage: React.FC = () => {
               viewport={{ amount: 0.3 }}
             >
               Rumah Allah tempat berkumpulnya umat Muslim
-              <br />
-              <span className="text-emerald-300 dark:text-emerald-400">untuk beribadah dan menambahkan ilmu</span>
+              <span className="text-emerald-300 dark:text-emerald-400 ml-2">untuk beribadah dan menambahkan ilmu</span>
             </motion.p>
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              viewport={{ amount: 0.3 }}
-            >
-              <motion.div whileHover={{ scale: 1.1, rotate: 2 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  size="lg"
-                  className="bg-blue-500 dark:bg-blue-700 hover:bg-blue-600 dark:hover:bg-blue-800 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-2xl transition-all duration-300"
-                >
-                  <Clock className="mr-2 h-5 w-5" />
-                  Lihat Jadwal Sholat
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.1, rotate: -2 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-blue-500 dark:border-blue-400 text-blue-500 dark:text-blue-400 hover:bg-blue-500 dark:hover:bg-blue-700 hover:text-white px-8 py-4 text-lg font-semibold rounded-full shadow-2xl transition-all duration-300"
-                >
-                  <Users className="mr-2 h-5 w-5" />
-                  Bergabung
-                </Button>
-              </motion.div>
-            </motion.div>
           </div>
         </motion.div>
       </motion.section>

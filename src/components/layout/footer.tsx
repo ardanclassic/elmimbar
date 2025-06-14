@@ -12,7 +12,6 @@ const AppFooter = () => {
   return (
     <footer className="bg-gray-900 dark:bg-gray-950 text-gray-300 py-12 px-4">
       <div className="max-w-6xl mx-auto text-center">
-        <h3 className="text-2xl font-bold text-white dark:text-gray-100 mb-4">{masjidProfile.mosque_name}</h3>
         <p className="text-gray-400 dark:text-gray-500 mb-6">
           "Sesungguhnya yang memakmurkan masjid-masjid Allah hanyalah orang-orang yang beriman kepada Allah dan hari
           akhir, menegakkan salat, menunaikan zakat, dan tidak takut kecuali kepada Allah. Maka, mereka itulah yang
