@@ -2,11 +2,11 @@
 
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Clock, Users, Heart, BookOpen, Calendar, Star, Globe } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
 import { MasjidProfile, Feature, Program, Achievement } from "@/types/homepage";
+import Image from "next/image";
 
 const MasjidLandingPage: React.FC = () => {
   const masjidProfile: MasjidProfile = {
@@ -107,11 +107,8 @@ const MasjidLandingPage: React.FC = () => {
         viewport={{ amount: 0.3 }}
       >
         <div className="absolute inset-0 z-0">
-          <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-            <source src={`/videos/mosque-footage.mp4`} type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-teal-800 to-blue-900 opacity-50 dark:opacity-60"></div>
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]"></div>
+          <Image src={"/images/mosque-4.avif"} alt="mosque" layout="fill" objectFit="cover" className="object-cover" />
+          <div className={`absolute inset-0 dark:bg-black/50 backdrop-blur-[1px]`}></div>
         </div>
 
         <motion.div
